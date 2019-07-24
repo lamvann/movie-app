@@ -21,7 +21,9 @@ class PopularMoviesPresenter(
         model.getPopularMovies().subscribe({ movies ->
                 val stringBuilder = StringBuilder()
                 movies.results.forEach {
-                    stringBuilder.append(TEXT.format(it.title, it.overview, it.voteAverage, it.releaseDate))
+                    stringBuilder.append(
+                        TEXT.format(it.title, it.overview, it.voteAverage, it.releaseDate)
+                    )
                 }
                 view.updateText(stringBuilder.toString())
             },
