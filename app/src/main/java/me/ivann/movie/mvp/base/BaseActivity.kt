@@ -1,17 +1,13 @@
 package me.ivann.movie.mvp.base
 
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import dagger.android.support.DaggerAppCompatActivity
 import me.ivann.movie.util.AutoDisposable
 import javax.inject.Inject
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity: DaggerAppCompatActivity() {
 
-    // This can be injected with Dagger2
-    var autoDisposable = AutoDisposable()
+    @Inject lateinit var autoDisposable: AutoDisposable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

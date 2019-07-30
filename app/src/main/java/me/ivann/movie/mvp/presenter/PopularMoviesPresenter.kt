@@ -6,8 +6,9 @@ import me.ivann.movie.mvp.model.PopularMoviesModel
 import me.ivann.movie.util.AutoDisposable
 import me.ivann.movie.util.Constants.TEXT
 import me.ivann.movie.util.extension.addTo
+import javax.inject.Inject
 
-class PopularMoviesPresenter(
+class PopularMoviesPresenter @Inject constructor(
     private val model: PopularMoviesModel
 ) : PopularMoviesContract.Presenter {
 

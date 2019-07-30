@@ -10,18 +10,11 @@ import me.ivann.movie.util.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class PopularMoviesModel {
-
-    private val retrofit: Retrofit
-        get() = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .build()
-
+class PopularMoviesModel @Inject constructor(
     private val service: MovieApi
-        get() = retrofit.create(MovieApi::class.java)
+) {
 
     fun getPopularMovies(): Observable<Entity.PopularMovies> =
         service.getPopularMovies(Constants.KEY_API, LANGUAGE, SORT_BY, ADULT, PAGE)
