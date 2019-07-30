@@ -7,6 +7,7 @@ import me.ivann.movie.mvp.presenter.PopularMoviesPresenter
 
 @Module
 abstract class ContractModule {
+    // This module allows our presenters to be injected
     @Binds
     abstract fun providesPresenter(presenter: PopularMoviesPresenter): PopularMoviesContract.Presenter
 }

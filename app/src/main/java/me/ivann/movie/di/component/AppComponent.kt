@@ -6,7 +6,9 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import me.ivann.movie.PresentationApp
-import me.ivann.movie.di.module.*
+import me.ivann.movie.di.module.ActivityBindingModule
+import me.ivann.movie.di.module.ApiModule
+import me.ivann.movie.di.module.ContractModule
 import javax.inject.Singleton
 
 @Component(
@@ -26,10 +28,9 @@ interface AppComponent : AndroidInjector<PresentationApp> {
      * So this application instance can be accessed by our modules
      * such as ApiModule when needed
      *
-     * */
-    /*
      * This is our custom Application class
-     * */
+     *
+     */
     override fun inject(presentationApp: PresentationApp)
 
     @Component.Builder

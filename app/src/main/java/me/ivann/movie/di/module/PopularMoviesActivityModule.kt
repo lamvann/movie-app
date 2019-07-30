@@ -6,7 +6,7 @@ import me.ivann.movie.mvp.base.BaseActivity
 import me.ivann.movie.mvp.view.PopularMoviesActivity
 
 @Module
-abstract class MovieActivityModule {
+abstract class PopularMoviesActivityModule {
 
     @Binds
     abstract fun bindBaseActivity(activity: PopularMoviesActivity) : BaseActivity
