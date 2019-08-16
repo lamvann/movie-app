@@ -1,6 +1,6 @@
 package me.ivann.movie.domain
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 sealed class Entity {
     data class PopularMovies(
@@ -10,7 +10,7 @@ sealed class Entity {
     data class MovieDetails(
         val title: String,
         val overview: String,
-        @SerializedName("vote_average") val voteAverage: String,
-        @SerializedName("release_date") val releaseDate: String
+        @Json(name = "vote_average") val voteAverage: String,
+        @Json(name = "release_date") val releaseDate: String
     ) : Entity()
 }

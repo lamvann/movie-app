@@ -1,4 +1,4 @@
-package me.ivann.movie.mvp.base
+package me.ivann.movie.ui.base
 
 import android.os.Bundle
 import android.view.View
@@ -23,5 +23,4 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         supportActionBar?.hide()
     }
-
 }

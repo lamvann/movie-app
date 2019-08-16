@@ -6,8 +6,6 @@ import me.ivann.movie.util.AutoDisposable
 interface PopularMoviesContract {
 
     interface View {
-        fun setupListeners()
-
         fun updateText(content: String)
     }
 
