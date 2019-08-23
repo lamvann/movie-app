@@ -11,21 +11,18 @@
     <ScrollView
             android:id="@+id/mainScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" >
 
             <TextView
                 android:id="@+id/mainText"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hello World!"
-                android:layout_gravity="center"/>
-        </LinearLayout>
+                android:paddingBottom="55dp"/>
 
     </ScrollView>
 
@@ -33,6 +30,8 @@
             android:id="@+id/mainButton"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:text="Get movies"
+            android:text="Fetch Popular movies"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
