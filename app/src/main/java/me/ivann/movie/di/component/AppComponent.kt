@@ -5,7 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import me.ivann.movie.PresentationApp
+import me.ivann.movie.util.PresentationApp
 import me.ivann.movie.di.module.*
 import javax.inject.Singleton
 
@@ -13,7 +13,6 @@ import javax.inject.Singleton
     modules = [
         ApiModule::class,
         ServiceModule::class,
-        ContractModule::class,
         RepositoryModule::class,
         ActivityBindingModule::class,
         AndroidSupportInjectionModule::class

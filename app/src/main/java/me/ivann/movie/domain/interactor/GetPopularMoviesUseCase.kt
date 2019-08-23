@@ -19,7 +19,6 @@ import javax.inject.Inject
 class GetPopularMoviesUseCase @Inject constructor(
     private val repository: PopularMoviesRepository
 ) {
-    // Little neat trick I just learned and want to share with you :P
     operator fun invoke(): Observable<Entity.PopularMovies> =
         repository.get(LANGUAGE, SORT_BY, ADULT, PAGE)
             .observeOn(AndroidSchedulers.mainThread())

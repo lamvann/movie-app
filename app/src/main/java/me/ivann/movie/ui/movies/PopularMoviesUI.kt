@@ -32,7 +32,7 @@ class PopularMoviesUI : AnkoComponent<PopularMoviesActivity> {
             }
 
             btnFetchPopularMovies = button("Fetch Popular movies") {
-                onClick { activity.presenter.getPopularMovies(activity.autoDisposable) }
+                onClick { activity.viewModel.getPopularMovies(activity.autoDisposable) }
             }.lparams {
                 bottomToBottom = PARENT_ID
                 rightToRight = PARENT_ID

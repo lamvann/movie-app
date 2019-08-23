@@ -1,5 +1,21 @@
 package me.ivann.movie.di.module
 
-abstract class ViewModelModule {
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import dagger.Binds
+import dagger.Module
+import dagger.multibindings.IntoMap
+import me.ivann.movie.di.annotation.ViewModelKey
+import me.ivann.movie.ui.ViewModelFactory
+import me.ivann.movie.ui.movies.PopularMoviesViewModel
 
+@Module
+abstract class ViewModelModule {
+    @Binds
+    @IntoMap
+    @ViewModelKey(PopularMoviesViewModel::class)
+    abstract fun bindPopularMoviesViewModel(viewModel: PopularMoviesViewModel): ViewModel
+
+    @Binds
+    abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory
 }

@@ -1,4 +1,4 @@
-package me.ivann.movie
+package me.ivann.movie.util
 
 import dagger.android.DaggerApplication
 import me.ivann.movie.di.component.DaggerAppComponent

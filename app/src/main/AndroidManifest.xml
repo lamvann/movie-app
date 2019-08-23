@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            android:name=".PresentationApp" tools:ignore="GoogleAppIndexingWarning">
+            android:name=".util.PresentationApp" tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.movies.PopularMoviesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

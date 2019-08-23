@@ -13,6 +13,8 @@ abstract class ActivityBindingModule {
     Such as the AutoDisposable
 
      */
-    @ContributesAndroidInjector(modules = [MovieActivityModule::class])
+    @ContributesAndroidInjector(
+        modules = [PopularMoviesActivityModule::class, ViewModelModule::class]
+    )
     abstract fun bindMovieActivity(): PopularMoviesActivity
 }

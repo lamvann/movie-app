@@ -1,25 +1,24 @@
 package me.ivann.movie.ui.movies
 
 import android.os.Bundle
-import me.ivann.movie.mvp.contract.PopularMoviesContract
-import me.ivann.movie.mvp.presenter.PopularMoviesPresenter
+import androidx.lifecycle.Observer
 import me.ivann.movie.ui.base.BaseActivity
 import org.jetbrains.anko.setContentView
-import javax.inject.Inject
 
-class PopularMoviesActivity : BaseActivity(), PopularMoviesContract.View {
 
-    val ui: PopularMoviesUI by lazy { PopularMoviesUI() }
+class PopularMoviesActivity : BaseActivity<PopularMoviesViewModel>() {
 
-    @Inject lateinit var presenter: PopularMoviesPresenter
+    private val ui by lazy { PopularMoviesUI() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ui.setContentView(this)
-        presenter.attach(this)
+        viewModel.movieData.observe(this, Observer {
+            updateText(it)
+        })
     }
 
-    override fun updateText(content: String) {
+    private fun updateText(content: String) {
         ui.tvMainText.text = content
     }
 }
