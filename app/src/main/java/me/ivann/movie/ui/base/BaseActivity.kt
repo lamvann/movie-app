@@ -16,7 +16,9 @@ abstract class BaseActivity<VM : ViewModel> : DaggerAppCompatActivity() {
     @Inject lateinit var autoDisposable: AutoDisposable
 
     @Suppress("UNCHECKED_CAST")
-    private val viewModelClass = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[FIRST_ITEM] as Class<VM>
+    private val viewModelClass =
+        (javaClass.genericSuperclass as ParameterizedType)
+            .actualTypeArguments[FIRST_ITEM] as Class<VM>
 
     val viewModel: VM by lazy {
         Log.e("BaseActivity", "Called ViewModelProviders.of")
