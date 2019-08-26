@@ -2,10 +2,9 @@ package me.ivann.movie.data.service
 
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
+import me.ivann.domain.Entity
+import me.ivann.domain.service.PopularMoviesService
 import me.ivann.movie.data.api.MovieApi
-import me.ivann.movie.domain.Entity
-import me.ivann.movie.domain.service.PopularMoviesService
-import me.ivann.movie.util.Constants.KEY_API
 import javax.inject.Inject
 
 class PopularMoviesServiceImpl @Inject constructor(
@@ -18,8 +17,11 @@ class PopularMoviesServiceImpl @Inject constructor(
         includeAdult: String,
         page: Int
     ): Observable<Entity.PopularMovies> {
-         return movieApi
-             .getPopularMovies(KEY_API, language, sortBy, includeAdult, page)
-             .subscribeOn(Schedulers.io())
+        return movieApi
+            .getPopularMovies(KEY_API, language, sortBy, includeAdult, page)
+            .subscribeOn(Schedulers.io())
+    }
+    companion object {
+        const val KEY_API = "4a6702592a8127e0bb3c1b65f2654d88"
     }
 }

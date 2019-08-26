@@ -1,20 +1,10 @@
-package me.ivann.movie.domain.interactor
+package me.ivann.domain.interactor
 
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import me.ivann.movie.domain.Entity
-import me.ivann.movie.domain.repository.PopularMoviesRepository
+import me.ivann.domain.Entity
+import me.ivann.domain.repository.PopularMoviesRepository
 import javax.inject.Inject
-
-/*
- * This is a crucial part of our app's architecture! See that this use case
- * contains our "business rules" and is asking the popular movie repository
- * to get some data.
- *
- * Note: This use case depends ONLY on an interface and we don't care how
- *       the repository chooses to get the data (as long as we get the data).
- *
- */
 
 class GetPopularMoviesUseCase @Inject constructor(
     private val repository: PopularMoviesRepository

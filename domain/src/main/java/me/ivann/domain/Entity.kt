@@ -1,6 +1,4 @@
-package me.ivann.movie.domain
-
-import com.squareup.moshi.Json
+package me.ivann.domain
 
 sealed class Entity {
     data class PopularMovies(
@@ -10,7 +8,7 @@ sealed class Entity {
     data class MovieDetails(
         val title: String,
         val overview: String,
-        @Json(name = "vote_average") val voteAverage: String,
-        @Json(name = "release_date") val releaseDate: String
+        val voteAverage: String,
+        val releaseDate: String
     ) : Entity()
 }

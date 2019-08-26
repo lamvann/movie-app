@@ -11,7 +11,6 @@ class PopularMoviesActivity : BaseActivity<PopularMoviesViewModel, ActivityMainB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding.viewModel = viewModel
         binding.autoDisposable = autoDisposable
     }

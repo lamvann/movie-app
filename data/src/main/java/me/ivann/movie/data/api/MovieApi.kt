@@ -1,7 +1,7 @@
 package me.ivann.movie.data.api
 
 import io.reactivex.Observable
-import me.ivann.movie.domain.Entity.PopularMovies
+import me.ivann.domain.Entity
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -13,5 +13,5 @@ interface MovieApi {
         @Query("sort_by") sortBy: String,
         @Query("include_adult") includeAdult: String,
         @Query("page") page: Int
-    ) : Observable<PopularMovies>
+    ) : Observable<Entity.PopularMovies>
 }

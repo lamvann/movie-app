@@ -1,7 +1,7 @@
-package me.ivann.movie.domain.repository
+package me.ivann.domain.repository
 
 import io.reactivex.Observable
-import me.ivann.movie.domain.Entity
+import me.ivann.domain.Entity
 
 interface PopularMoviesRepository {
     fun get(

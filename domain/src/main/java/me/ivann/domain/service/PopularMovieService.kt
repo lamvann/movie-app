@@ -1,7 +1,7 @@
-package me.ivann.movie.domain.service
+package me.ivann.domain.service
 
 import io.reactivex.Observable
-import me.ivann.movie.domain.Entity.PopularMovies
+import me.ivann.domain.Entity
 
 interface PopularMoviesService {
     fun getPopularMovies(
@@ -9,5 +9,5 @@ interface PopularMoviesService {
         sortBy: String,
         includeAdult: String,
         page: Int
-    ): Observable<PopularMovies>
+    ): Observable<Entity.PopularMovies>
 }

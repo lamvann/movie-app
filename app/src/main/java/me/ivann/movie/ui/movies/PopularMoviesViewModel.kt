@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import me.ivann.movie.domain.interactor.GetPopularMoviesUseCase
+import me.ivann.domain.interactor.GetPopularMoviesUseCase
 import me.ivann.movie.util.AutoDisposable
 import me.ivann.movie.util.Constants.TEXT
 import me.ivann.movie.util.extension.addTo

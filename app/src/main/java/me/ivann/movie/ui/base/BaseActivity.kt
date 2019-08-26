@@ -29,7 +29,7 @@ abstract class BaseActivity<VM : ViewModel, B : ViewDataBinding>
     val viewModel: VM
         by lazy {
             Log.e("BaseActivity", "Called ViewModelProviders.of")
-            ViewModelProviders.of(this, viewModelFactory).get(viewModelClass)
+            ViewModelProviders.of(this, viewModelFactory)[viewModelClass]
         }
 
     val binding: B
