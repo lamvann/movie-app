@@ -1,8 +1,8 @@
 package com.example.domain
 
 sealed class Entity {
-    data class PopularMovies(
-        val results: List<Movie>
+    data class Movies(
+        val movies: List<Movie>
     ) : Entity()
 
     data class Movie(

@@ -5,10 +5,10 @@ import com.example.domain.repository.BaseRepository
 import io.reactivex.Observable
 
 interface PopularMoviesRepository : BaseRepository {
-    fun get(
+    suspend fun get(
         language: String,
         sortBy: String,
         includeAdult: String,
         page: Int
-    ): Observable<List<Entity.Movie>>
+    ): List<Entity.Movie>
 }

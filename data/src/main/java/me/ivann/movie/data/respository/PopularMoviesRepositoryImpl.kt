@@ -10,11 +10,11 @@ class PopularMoviesRepositoryImpl @Inject constructor(
     private val movieService: PopularMoviesService
 ) : PopularMoviesRepository {
 
-    override fun get(
+    override suspend fun get(
         language: String,
         sortBy: String,
         includeAdult: String,
         page: Int
-    ): Observable<List<Entity.Movie>> =
+    ): List<Entity.Movie> =
         movieService.getPopularMovies(language, sortBy, includeAdult, page)
 }

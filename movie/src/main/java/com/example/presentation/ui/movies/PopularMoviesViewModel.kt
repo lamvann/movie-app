@@ -4,7 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.example.domain.interactor.movies.GetPopularMoviesUseCase
+import kotlinx.coroutines.Dispatchers
 import me.ivann.movie.util.AutoDisposable
 import me.ivann.movie.util.Constants.TEXT
 import me.ivann.movie.util.extension.addTo
@@ -18,23 +20,13 @@ class PopularMoviesViewModel @Inject constructor(
         Log.e(TAG, "ViewModel Created!")
     }
 
-    private val moviesLiveData = MutableLiveData<String>()
-
-    val movieData: LiveData<String> = moviesLiveData
-
-    fun getPopularMovies(autoDisposable: AutoDisposable) {
-        popularMoviesUseCase().subscribe({ movies ->
-            val stringBuilder = StringBuilder()
-            movies.forEach {
-                stringBuilder.append(TEXT.format(it.title, it.overview))
-            }
-                moviesLiveData.value = stringBuilder.toString()
-        },
-            {
-                Log.e(TAG, it.message.toString())
-            }
-        ) addTo autoDisposable
+    val fetchMovieData = liveData(Dispatchers.IO) {
+        val stringBuilder = StringBuilder()
+        popularMoviesUseCase().forEach { stringBuilder.append(TEXT.format(it.title, it.overview)) }
+        emit(stringBuilder.toString())
     }
+
+    val popularMovies: LiveData<String> = fetchMovieData
 
     companion object {
         const val TAG = "PopularMoviesViewModel"
