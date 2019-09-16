@@ -1,9 +1,9 @@
 package me.ivann.movie.data.respository
 
+import com.example.domain.Entity
+import com.example.domain.repository.movies.PopularMoviesRepository
+import com.example.domain.service.PopularMoviesService
 import io.reactivex.Observable
-import me.ivann.domain.Entity
-import me.ivann.domain.repository.PopularMoviesRepository
-import me.ivann.domain.service.PopularMoviesService
 import javax.inject.Inject
 
 class PopularMoviesRepositoryImpl @Inject constructor(
@@ -15,6 +15,6 @@ class PopularMoviesRepositoryImpl @Inject constructor(
         sortBy: String,
         includeAdult: String,
         page: Int
-    ): Observable<Entity.PopularMovies> =
+    ): Observable<List<Entity.Movie>> =
         movieService.getPopularMovies(language, sortBy, includeAdult, page)
 }

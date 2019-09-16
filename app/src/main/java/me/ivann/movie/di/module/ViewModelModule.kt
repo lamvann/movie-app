@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import me.ivann.movie.di.annotation.ViewModelKey
 import me.ivann.movie.ui.ViewModelFactory
-import me.ivann.movie.ui.movies.PopularMoviesViewModel
+import com.example.presentation.ui.movies.PopularMoviesViewModel
 
 @Module
 abstract class ViewModelModule {

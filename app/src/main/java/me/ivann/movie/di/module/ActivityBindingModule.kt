@@ -2,7 +2,7 @@ package me.ivann.movie.di.module
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import me.ivann.movie.ui.movies.PopularMoviesActivity
+import com.example.presentation.ui.movies.PopularMoviesActivity
 
 @Module
 abstract class ActivityBindingModule {

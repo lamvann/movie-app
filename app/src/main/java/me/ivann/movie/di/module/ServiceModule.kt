@@ -1,9 +1,9 @@
 package me.ivann.movie.di.module
 
+import com.example.domain.service.PopularMoviesService
 import dagger.Binds
 import dagger.Module
 import me.ivann.movie.data.service.PopularMoviesServiceImpl
-import me.ivann.movie.domain.service.PopularMoviesService
 
 @Module
 abstract class ServiceModule {

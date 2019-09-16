@@ -1,11 +1,9 @@
 package me.ivann.movie.di.component
 
-import android.app.Application
-import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import me.ivann.movie.util.PresentationApp
+import me.ivann.movie.PresentationApp
 import me.ivann.movie.di.module.*
 import javax.inject.Singleton
 
@@ -31,14 +29,16 @@ interface AppComponent : AndroidInjector<PresentationApp> {
     /*
      * This is our custom Application class
      * */
-    override fun inject(presentationApp: PresentationApp)
-
+//    override fun inject(presentationApp: PresentationApp)
+//
+//    @Component.Builder
+//    interface Builder {
+//
+//        @BindsInstance
+//        fun application(application: Application): Builder
+//
+//        fun build(): AppComponent
+//    }
     @Component.Builder
-    interface Builder {
-
-        @BindsInstance
-        fun application(application: Application): Builder
-
-        fun build(): AppComponent
-    }
+    abstract class Builder : AndroidInjector.Builder<PresentationApp>()
 }
