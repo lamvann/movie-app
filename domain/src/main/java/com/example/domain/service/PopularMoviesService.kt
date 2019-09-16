@@ -1,6 +1,5 @@
 package com.example.domain.service
 
-import com.example.domain.Entity
 import com.example.domain.service.movies.BaseService
 
 interface PopularMoviesService : BaseService {

@@ -1,6 +1,5 @@
 package com.example.domain.interactor.movies
 
-import com.example.domain.Entity
 import com.example.domain.repository.movies.PopularMoviesRepository
 import javax.inject.Inject
 
