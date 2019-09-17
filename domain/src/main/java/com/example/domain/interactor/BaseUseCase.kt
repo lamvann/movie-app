@@ -1,7 +1,5 @@
 package com.example.domain.interactor
 
-import android.support.annotation.WorkerThread
-//import androidx.annotation.WorkerThread
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 /**
@@ -14,15 +12,14 @@ import kotlinx.coroutines.withContext
  */
 interface BaseUseCase<out Type> where Type : Any {
 
-    @WorkerThread
     suspend fun run(): Result<Type>
 
     suspend operator fun invoke(): Result<Type> {
+
         return withContext(Dispatchers.IO) {
-            kotlin.runCatching {
+            runCatching {
                 run().getOrThrow()
-            }.onFailure(::logError)
+            }
         }
     }
 }
-class UncaughtUseCaseError(throwable: Throwable) : Failure.DataFailure(throwable = throwable)
