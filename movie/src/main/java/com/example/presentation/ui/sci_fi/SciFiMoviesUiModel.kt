@@ -1,9 +1,8 @@
 package com.example.presentation.ui.sci_fi
 
 import com.example.presentation.ui.base.UiModel
-import com.example.presentation.ui.popular.PopularMoviesUiModel
 
-data class PopularMoviesUiModel(
+data class SciFiMoviesUiModel(
     override val hasError: Boolean,
     override val isLoading: Boolean,
     val moviesText: String,
@@ -11,9 +10,9 @@ data class PopularMoviesUiModel(
 ) : UiModel {
 
     companion object {
-        val default: PopularMoviesUiModel = PopularMoviesUiModel(
+        val default: SciFiMoviesUiModel = SciFiMoviesUiModel(
             hasError = false,
-            isLoading = true,
+            isLoading = false,
             moviesText = "",
             onFetchButtonClicked = {}
         )

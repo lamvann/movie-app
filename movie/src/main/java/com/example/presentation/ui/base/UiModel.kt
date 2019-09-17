@@ -1,6 +1,6 @@
 package com.example.presentation.ui.base
 
-interface BaseUiModel {
+interface UiModel {
     val hasError: Boolean
     val isLoading: Boolean
 }

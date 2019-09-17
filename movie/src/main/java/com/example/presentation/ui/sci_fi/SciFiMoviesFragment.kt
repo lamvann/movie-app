@@ -1,28 +1,31 @@
 package com.example.presentation.ui.sci_fi
 
 import com.example.presentation.R
-import com.example.presentation.databinding.FragmentMoviesBinding
+import com.example.presentation.databinding.FragmentSciFiMoviesBinding
 import com.example.presentation.ui.base.BaseDataBindingFragment
-import com.example.presentation.ui.popular.PopularMoviesFragment
-import com.example.presentation.ui.util.FragmentBuilder
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
-class PopularMoviesFragment : BaseDataBindingFragment<
-        PopularMoviesUiModel,
+class SciFiMoviesFragment(override val viewModel: SciFiMoviesViewModel) : BaseDataBindingFragment<
+        SciFiMoviesUiModel,
         SciFiMoviesViewModel,
-        FragmentMoviesBinding>(R.layout.fragment_movies) {
+        FragmentSciFiMoviesBinding>(R.layout.fragment_sci_fi_movies) {
 
-    override val viewModel: SciFiMoviesViewModel by viewModel()
+//    override val viewModel: SciFiMoviesViewModel by viewModel()
 
-    override fun onUiModelUpdated(uiModel: PopularMoviesUiModel) {
+    override fun onViewStart() {
+        super.onViewStart()
+//        Timber.d("Arguments: $sampleArgument")
+    }
+
+    override fun onUiModelUpdated(uiModel: SciFiMoviesUiModel) {
         super.onUiModelUpdated(uiModel)
         //todo - do stuff
     }
 
-    companion object Builder: FragmentBuilder<PopularMoviesFragment> {
-        override fun newInstance(vararg arguments: Pair<String, Any>): PopularMoviesFragment {
-            return PopularMoviesFragment()
+    companion object Builder {
+        fun newInstance(viewModel: SciFiMoviesViewModel): SciFiMoviesFragment {
+            return SciFiMoviesFragment(viewModel)
         }
     }
-
 }
