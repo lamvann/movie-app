@@ -1,6 +1,6 @@
 package com.example.domain.service
 
-import com.example.domain.Entity
+import com.example.domain.entity.Movie
 import com.example.domain.service.movies.BaseService
 
 interface PopularMoviesService : BaseService {
@@ -8,6 +8,8 @@ interface PopularMoviesService : BaseService {
         language: String,
         sortBy: String,
         includeAdult: String,
-        page: Int
-    ): List<Entity.Movie>
+        page: Int,
+        genre: String = "",
+        year: String = ""
+    ): Result<List<Movie>>
 }
