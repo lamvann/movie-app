@@ -31,7 +31,7 @@ abstract class BaseViewModel<UiModelType : UiModel>(
 
     open fun onArgumentsReceived(arguments: Bundle) {}
 
-    protected fun updateUiModel(update: (UiModelType) -> UiModelType) {
+    fun updateUiModel(update: (UiModelType) -> UiModelType) {
         uiModelLiveData.value?.let {
             val newModel = update(it)
 

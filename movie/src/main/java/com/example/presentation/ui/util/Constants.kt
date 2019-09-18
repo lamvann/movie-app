@@ -1,4 +1,4 @@
-package me.ivann.movie.util
+package com.example.presentation.ui.util
 
 object Constants {
     const val BASE_URL = "https://api.themoviedb.org/3/"

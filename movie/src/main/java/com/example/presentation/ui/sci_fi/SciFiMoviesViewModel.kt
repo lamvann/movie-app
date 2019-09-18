@@ -4,7 +4,7 @@ import android.app.Application
 import com.example.domain.interactor.Failure
 import com.example.domain.interactor.movies.SciFiMoviesUseCase
 import com.example.presentation.ui.base.BaseViewModel
-import me.ivann.movie.util.Constants.TEXT
+import com.example.presentation.ui.util.Constants.TEXT
 import kotlin.text.Typography.bullet
 
 class SciFiMoviesViewModel(
@@ -22,7 +22,7 @@ class SciFiMoviesViewModel(
         updateUiModel { uiModel -> uiModel.copy(isLoading = false, hasError = true) }
     }
 
-    private fun fetchMovies() {
+    fun fetchMovies() {
         updateUiModel { uiModel -> uiModel.copy(isLoading = true) }
 
         launchUseCase(sciFiMoviesUseCase) { movies ->

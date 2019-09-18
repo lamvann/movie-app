@@ -1,12 +1,10 @@
 package com.example.presentation.ui.popular
 
 import android.app.Application
-import androidx.lifecycle.viewModelScope
 import com.example.domain.interactor.Failure
 import com.example.domain.interactor.movies.GetPopularMoviesUseCase
 import com.example.presentation.ui.base.BaseViewModel
-import kotlinx.coroutines.launch
-import me.ivann.movie.util.Constants.TEXT
+import com.example.presentation.ui.util.Constants.TEXT
 
 class PopularMoviesViewModel(
 
@@ -25,13 +23,10 @@ class PopularMoviesViewModel(
         updateUiModel { uiModel -> uiModel.copy(isLoading = false, hasError = true) }
     }
 
-    private fun fetchMovies() {
+    fun fetchMovies() {
         updateUiModel { uiModel -> uiModel.copy(isLoading = true) }
 
         launchUseCase(popularMoviesUseCase) { movies ->
-
-            updateUiModel { uiModel -> uiModel.copy(isLoading = false) }
-
             updateUiModel { uiModel ->
                 uiModel.copy(
                     isLoading = false,
