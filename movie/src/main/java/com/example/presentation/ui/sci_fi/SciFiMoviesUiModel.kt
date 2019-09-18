@@ -17,5 +17,4 @@ data class SciFiMoviesUiModel(
             onFetchButtonClicked = {}
         )
     }
-
 }

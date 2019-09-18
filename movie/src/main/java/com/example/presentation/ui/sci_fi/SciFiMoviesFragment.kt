@@ -11,16 +11,10 @@ class SciFiMoviesFragment(override val viewModel: SciFiMoviesViewModel) : BaseDa
         SciFiMoviesViewModel,
         FragmentSciFiMoviesBinding>(R.layout.fragment_sci_fi_movies) {
 
-//    override val viewModel: SciFiMoviesViewModel by viewModel()
-
-    override fun onViewStart() {
-        super.onViewStart()
-//        Timber.d("Arguments: $sampleArgument")
-    }
-
     override fun onUiModelUpdated(uiModel: SciFiMoviesUiModel) {
         super.onUiModelUpdated(uiModel)
-        //todo - do stuff
+        Timber.d("This is the current text: ${uiModel.moviesText}")
+        Timber.d("This is the current loading visibility: ${uiModel.isLoading}")
     }
 
     companion object Builder {

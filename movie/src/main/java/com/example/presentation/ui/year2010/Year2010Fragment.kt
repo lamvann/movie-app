@@ -11,16 +11,10 @@ class Year2010Fragment(override val viewModel: Year2010ViewModel) : BaseDataBind
         Year2010ViewModel,
         Fragment2010MoviesBinding>(R.layout.fragment_2010_movies) {
 
-//    override val viewModel: Year2010ViewModel by viewModel()
-
-    override fun onViewStart() {
-        super.onViewStart()
-//        Timber.d("Arguments: $sampleArgument")
-    }
-
     override fun onUiModelUpdated(uiModel: Year2010UiModel) {
         super.onUiModelUpdated(uiModel)
-        //todo - do stuff
+        Timber.d("This is the current text: ${uiModel.moviesText}")
+        Timber.d("This is the current loading visibility: ${uiModel.isLoading}")
     }
 
     companion object Builder {

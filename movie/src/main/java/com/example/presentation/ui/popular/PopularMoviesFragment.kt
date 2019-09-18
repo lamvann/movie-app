@@ -12,16 +12,10 @@ class PopularMoviesFragment(override val viewModel: PopularMoviesViewModel) : Ba
         PopularMoviesViewModel,
         FragmentPopularMoviesBinding>(R.layout.fragment_popular_movies) {
 
-//    override val viewModel: PopularMoviesViewModel by viewModel()
-
-    override fun onViewStart() {
-        super.onViewStart()
-//        Timber.d("Arguments: $argument")
-    }
-
     override fun onUiModelUpdated(uiModel: PopularMoviesUiModel) {
         super.onUiModelUpdated(uiModel)
-        //todo - do stuff
+        Timber.d("This is the current text: ${uiModel.moviesText}")
+        Timber.d("This is the current loading visibility: ${uiModel.isLoading}")
     }
 
     companion object Builder {
